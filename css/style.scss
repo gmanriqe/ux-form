@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Fira Sans", sans-serif;
+}
+
+.main_form {
+  background-color: gold;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    max-width: 350px;
+    width: 100%;
+    text-align: center;
+
+    .title {
+      color: #645421;
+      font-size: 34px;
+      margin-bottom: 0px;
+    }
+
+    .form_row {
+      position: relative;
+
+      margin-bottom: 30px;
+
+      border-bottom: 1px solid #fff;
+      &:last-of-type {
+        margin-bottom: 70px;
+      }
+
+      .input {
+        font-size: 22px;
+        padding: 10px 10px 10px 5px;
+        display: block;
+        width: 100%;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        background-color: transparent;
+        color: #fff;
+        margin-top: 25px;
+
+        // border-bottom: 1px solid #fff; 
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+
+        // caret-color:#645421;
+
+        &:focus {
+          outline: none;
+        }
+        &:focus ~ label,
+        &:valid ~ label {
+          top: -10px;
+          font-size: 18px;
+          color: #c9a937;
+
+          text-shadow: none;
+          font-weight: 500;
+        }
+
+        //efecto with del span
+        &:focus ~ .bar:before,
+        &:focus ~ .bar:after {
+          width: 50%;
+        }
+      }
+      label {
+        color: #645421;
+        font-size: 22px;
+        font-weight: 400; 
+        pointer-events: none;/*ojito*/
+
+        position: absolute;
+        top: 15px;
+        left: 10px;
+
+        transition: all 0.2s ease;
+      }
+
+      /*span */
+      .bar {
+        position: relative;
+        display: block;        
+        width: 100%;
+        
+        &:focus {
+          outline: none;
+        }
+
+        &:before,
+        &:after {
+          content: "";
+          height: 2px;
+          width: 0;
+
+          position: absolute;
+          // bottom: 0;
+          bottom: -1px;
+
+          background-color: #c9a937;
+          transition: all 0.2s ease;
+        }
+
+        &:before {
+          left: 50%;
+        }
+        &:after {
+          right: 50%;
+        }
+      }
+    }
+
+    .btn {
+      max-width: 423px;
+      width: 100%;
+
+      cursor: pointer;
+      background: #c9a937;
+      border: 1px solid #c9a937;
+      border-radius: 4px;
+      color: rgba(0, 0, 0, 0.5);
+      display: block;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 10px 0;
+      text-align: center;
+      text-decoration: none;
+
+      -webkit-appearance: none;
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .forgot_password {
+      color: #645421;
+      font-size: 1rem;
+    }
+  }
+}
